@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Bella Cucina</title>
+    <style>
+        body {
+            font-family: 'Playfair Display', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fdfbf8;
+        }
+
+        header {
+            background-color: #2c1810;
+            color: #f4d03f;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .hero {
+            background-image: url('https://images.unsplash.com/photo-1514933651103-005eec06c04b');
+            background-size: cover;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-content {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 3rem;
+            color: #f4d03f;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .menu-section {
+            padding: 4rem;
+            text-align: center;
+            background-color: #fff;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .menu-item {
+            padding: 2rem;
+            background-color: #fdfbf8;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .reservation-btn {
+            background-color: #d35400;
+            color: white;
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .reservation-btn:hover {
+            background-color: #e67e22;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>La Bella Cucina</h1>
+        <p>Authentic Italian Dining Experience</p>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Welcome to Fine Dining</h2>
+            <p>Experience the taste of traditional Italian cuisine</p>
+            <button class="reservation-btn">Make a Reservation</button>
+        </div>
+    </section>
+
+    <section class="menu-section">
+        <h2>Our Signature Dishes</h2>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <h3>Osso Buco</h3>
+                <p>Braised veal shanks with gremolata</p>
+                <span>$38</span>
+            </div>
+            <div class="menu-item">
+                <h3>Risotto al Tartufo</h3>
+                <p>Creamy truffle risotto with parmesan</p>
+                <span>$42</span>
+            </div>
+            <div class="menu-item">
+                <h3>Branzino al Forno</h3>
+                <p>Whole roasted sea bass with herbs</p>
+                <span>$45</span>
+            </div>
+        </div>
+    </section>
+
+    <section style="background-color: #2c1810; color: #f4d03f; text-align: center; padding: 3rem;">
+        <h2>Opening Hours</h2>
+        <p>Tuesday - Sunday: 5:00 PM - 11:00 PM</p>
+        <p>Monday: Closed</p>
+    </section>
+
+    <footer style="background: #1a1a1a; color: #f4d03f; text-align: center; padding: 2rem;">
+        <p>Reservations: (555) 123-4567 | info@labellacucina.com</p>
+        <p>123 Gourmet Street, Culinary District</p>
+        <p>© 2023 La Bella Cucina. All rights reserved.</p>
+    </footer>
+</body>
+<script src="http://localhost:5173/widget.min.js?resturantId=4RYZTXJENRc4U7m6GOnWCf"></script>
+
+</html>
