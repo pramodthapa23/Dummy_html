@@ -35,6 +35,14 @@
             color: #f4d03f;
             text-align: center;
             border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hero-content input {
+            padding: 1rem;
+            border-radius: 10px;
+            border: none;
         }
 
         .menu-section {
@@ -86,7 +94,9 @@
         <div class="hero-content">
             <h2>Welcome to Fine Dining</h2>
             <p>Experience the taste of traditional Italian cuisine</p>
-            <button class="reservation-btn">Make a Reservation</button>
+            <p id="current-resturant-id"> </p>
+            <input type="text" placeholder="Resturant Id">
+            <button class="reservation-btn">Change Resturant</button>
         </div>
     </section>
 
@@ -123,6 +133,36 @@
         <p>© 2023 La Bella Cucina. All rights reserved.</p>
     </footer>
 </body>
-<script src="https://widget-dev.tallores.com/widget.min.js?resturantId=4RYZTXJENRc4U7m6GOnWCf"></script>
+<script>
+    let currentWidgetScript = null;
+
+    function loadWidget(restaurantId) {
+        // Remove existing widget script if it exists
+        if (currentWidgetScript) {
+            currentWidgetScript.remove();
+        }
+
+        // Create new script element
+        const script = document.createElement('script');
+        script.src = `https://widget-dev.tallores.com/widget.min.js?resturantId=${restaurantId}`;
+        script.id = 'widget-script';
+        document.body.appendChild(script);
+        currentWidgetScript = script;
+    }
+
+    // Load initial widget
+    loadWidget(localStorage.getItem('resturantId') || '4RYZTXJENRc4U7m6GOnWCf');
+
+    document.querySelector('#current-resturant-id').textContent = `Current Resturant id: ${localStorage.getItem('resturantId') || '4RYZTXJENRc4U7m6GOnWCf'}`;
+
+    function changeResturant() {
+        const restaurantId = document.querySelector('.hero-content input').value;
+        document.querySelector('#current-resturant-id').textContent = `Current Resturant id: ${restaurantId}`;
+        localStorage.setItem('resturantId', restaurantId);
+        loadWidget(restaurantId);
+    }
+
+    document.querySelector('.hero-content input').addEventListener('change', changeResturant);
+</script>
 
 </html>
